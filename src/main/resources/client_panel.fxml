@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="pane" prefHeight="450.0" prefWidth="650.0" styleClass="parent" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.ClientPanel">
+   <children>
+      <VBox alignment="CENTER" layoutX="75.0" layoutY="50.0" prefHeight="350.0" prefWidth="500.0" spacing="40.0">
+         <children>
+            <GridPane alignment="CENTER" hgap="20.0" vgap="40.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXTextField fx:id="senderNumberField" labelFloat="true" promptText="Your Account Number" />
+                  <JFXTextField fx:id="receiverNameField" labelFloat="true" promptText="Receiver Name" GridPane.columnIndex="1" />
+                  <JFXTextField fx:id="exchangeAmountField" labelFloat="true" promptText="Exchange Amount" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <JFXTextArea fx:id="noteField" labelFloat="true" prefHeight="120.0" prefWidth="450.0" promptText="Note" />
+            <StackPane>
+               <children>
+                  <JFXButton fx:id="sendButton" buttonType="RAISED" graphicTextGap="8.0" onAction="#onSendClick" text="Send">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SEND" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXSpinner fx:id="spinner" visible="false" />
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
